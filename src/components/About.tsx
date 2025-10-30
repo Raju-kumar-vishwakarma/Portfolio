@@ -55,7 +55,7 @@ const About = () => {
               <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/30 smooth-transition glow-effect">
                 <Shield className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-primary">5+ Years Experience</h3>
+              <h3 className="text-xl font-bold mb-2 text-primary">1+ Years Experience</h3>
               <p className="text-muted-foreground">Building quality apps and websites</p>
             </div>
 
@@ -63,7 +63,7 @@ const About = () => {
               <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/30 smooth-transition glow-blue">
                 <Lock className="w-6 h-6 text-accent" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-accent">50+ Projects Completed</h3>
+              <h3 className="text-xl font-bold mb-2 text-accent">10+ Projects Completed</h3>
               <p className="text-muted-foreground">Delivering exceptional results</p>
             </div>
 

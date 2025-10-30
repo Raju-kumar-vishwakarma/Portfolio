@@ -11,7 +11,7 @@ const Footer = () => {
 
           <div className="flex gap-8 items-center">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/raju_vishwa.karma/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-foreground hover:text-primary smooth-transition"
@@ -19,7 +19,7 @@ const Footer = () => {
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/Raju-kumar-vishwakarma"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-foreground hover:text-primary smooth-transition"
@@ -27,7 +27,7 @@ const Footer = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/raju-kumar-a134b9342/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-foreground hover:text-primary smooth-transition"
@@ -35,7 +35,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/LegendRaju32694"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-foreground hover:text-primary smooth-transition"

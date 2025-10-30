@@ -8,7 +8,7 @@ const Hero = () => {
   const typedRef = useRef(null);
   const [emailCopied, setEmailCopied] = useState(false);
   const { toast } = useToast();
-  const email = "contact@example.com";
+  const email = "rajuvishwa012@gmail.com";
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
@@ -62,11 +62,11 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto animate-fade-in">
-        <div className="mb-6 inline-block animate-scale-in">
+        {/* <div className="mb-6 inline-block animate-scale-in">
           <span className="px-4 py-2 glass-card cyber-border rounded-full text-sm text-primary animate-glow">
             Available for Freelance
           </span>
-        </div>
+        </div> */}
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
           Hi, I'm{" "}
@@ -84,6 +84,7 @@ const Hero = () => {
         <div className="flex flex-wrap gap-4 justify-center mb-12 animate-scale-in">
           <Button 
             variant="hero" 
+            id  = "services"
             size="lg"
             onClick={() => scrollToSection("projects")}
             className="hover:scale-110 smooth-transition glow-effect"
@@ -102,7 +103,7 @@ const Hero = () => {
 
         <div className="flex gap-6 justify-center animate-fade-in">
           <a 
-            href="https://github.com" 
+            href="https://github.com/Raju-kumar-vishwakarma" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary hover:scale-125 smooth-transition"
@@ -110,7 +111,7 @@ const Hero = () => {
             <Github className="w-6 h-6" />
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="https://www.linkedin.com/in/raju-kumar-a134b9342/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary hover:scale-125 smooth-transition"
@@ -120,7 +121,7 @@ const Hero = () => {
           <button 
             onClick={copyEmail}
             className="text-muted-foreground hover:text-primary hover:scale-125 smooth-transition relative group"
-            title="Copy email address"
+            title="rajuvishwa012@gmail.com"
           >
             {emailCopied ? (
               <Check className="w-6 h-6 text-primary" />

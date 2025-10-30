@@ -52,13 +52,13 @@ const Stats = () => {
   const stats = [
     {
       icon: Code,
-      value: 50,
+      value: 10,
       label: "Projects Completed",
       suffix: "+",
     },
     {
       icon: Users,
-      value: 100,
+      value: 20,
       label: "Happy Clients",
       suffix: "+",
     },
@@ -70,7 +70,7 @@ const Stats = () => {
     },
     {
       icon: Briefcase,
-      value: 5,
+      value: 1,
       label: "Years Experience",
       suffix: "+",
     },

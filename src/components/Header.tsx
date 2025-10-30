@@ -27,30 +27,18 @@ const Header = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleResumeDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/resume.pdf";
-    link.download = "Raju_Vishwa_Resume.pdf";
-    link.click();
-  };
-
-  const handlePrintResume = () => {
-    window.print();
-  };
-
   const navItems = [
     { label: "Home", id: "hero" },
     { label: "About Me", id: "about" },
     { label: "Services", id: "services" },
     { label: "Resume", id: "resume" },
+    { label: "Projects", id: "projects" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "glass-header shadow-lg"
-          : "bg-transparent"
+        isScrolled ? "glass-header shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 py-4">
@@ -60,9 +48,9 @@ const Header = () => {
             onClick={() => scrollToSection("hero")}
             className="text-2xl font-bold hover:opacity-80 smooth-transition flex items-center gap-2"
           >
-            <span className="text-primary">{'{ '}</span>
+            <span className="text-primary">{"{ "}</span>
             <span className="gradient-text">Raju Vishwa</span>
-            <span className="text-primary">{' }'}</span>
+            <span className="text-primary">{" }"}</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -81,7 +69,7 @@ const Header = () => {
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
-            
+
             <Button
               variant="outline"
               size="sm"
@@ -102,40 +90,42 @@ const Header = () => {
                   <Menu className="w-7 h-7" />
                 </Button>
               </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col gap-6 mt-8">
-                <div className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <span className="text-primary">{'{ '}</span>
-                  <span className="gradient-text">Raju Vishwa</span>
-                  <span className="text-primary">{' }'}</span>
-                </div>
+              <SheetContent
+                side="right"
+                className="w-[300px] sm:w-[400px] [&>button]:top-10 [&>button]:right-10 [&>button>svg]:h-6 [&>button>svg]:w-6 [&>button>svg]:stroke-[4]" // <-- ICON SIZE UPDATED HERE
+              >
+                <div className="flex flex-col gap-6 mt-8">
+                  <div className="text-2xl font-bold mb-4 flex items-center gap-2">
+                    <span className="text-primary">{"{ "}</span>
+                    <span className="gradient-text">Raju Vishwa</span>
+                    <span className="text-primary">{" }"}</span>
+                  </div>
 
-                <nav className="flex flex-col gap-2">
-                  {navItems.map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className="text-left px-4 py-3 rounded-lg text-lg text-muted-foreground hover:text-foreground hover:bg-accent/50 smooth-transition"
+                  <nav className="flex flex-col gap-2">
+                    {navItems.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToSection(item.id)}
+                        className="text-left px-4 py-3 rounded-lg text-lg text-muted-foreground hover:text-foreground hover:bg-accent/50 smooth-transition"
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </nav>
+
+                  <div className="flex flex-col gap-3 mt-4">
+                    <Button
+                      variant="default"
+                      onClick={() => scrollToSection("contact")}
+                      className="gap-2"
                     >
-                      {item.label}
-                    </button>
-                  ))}
-                </nav>
-
-                <div className="flex flex-col gap-3 mt-4">
-                  
-                  <Button
-                    variant="default"
-                    onClick={() => scrollToSection("contact")}
-                    className="gap-2"
-                  >
-                    Contact Me
-                    <span className="text-lg">↗</span>
-                  </Button>
+                      Contact Me
+                      <span className="text-lg">↗</span>
+                    </Button>
+                  </div>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
