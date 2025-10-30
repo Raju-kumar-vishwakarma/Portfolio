@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-import anishow from "../assets/anishow.png";
 import { Link } from "react-router-dom";
+import anishow from "../assets/anishow.png";
+import avarena from "../assets/avarena.png";
+import library from "../assets/xyzlibrary.png";
+
 const ProjectFilters = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
@@ -11,35 +14,34 @@ const ProjectFilters = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Anishow Mobile App & Website",
       description:
         "A React-based anime streaming web app inspired by AnimeDekho with manga section",
-      image: "",
-      tags: ["Web", "Backend"],
-      tech: ["React", "Node.js", "MongoDB"],
-      github: "#",
-      demo: "#",
-    },
-    {
-      title: "Mobile Banking App",
-      description:
-        "Secure banking application with biometric authentication and real-time transactions",
       image: anishow,
       tags: ["Mobile", "UI/UX", "Backend"],
-      tech: ["React Native", "Firebase"],
-      github: "#",
-      demo: "anishow.me",
+      tech: ["React", "Firebase" , "TypeScript"],
+      github: "https://github.com/Raju-kumar-vishwakarma/anishow",
+      demo: "https://anishow.me/",
     },
     {
-      title: "Task Management Dashboard",
+      title: "AV Arena - Esports Tournament Platform",
       description:
-        "Collaborative task management with analytics and team collaboration features",
-      image:
-        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80",
-      tags: ["Web", "UI/UX"],
-      tech: ["Vue.js", "Tailwind"],
-      github: "#",
-      demo: "#",
+        "The platform likely allows setting up tournaments, tracking participants, results, leaderboards.tion",
+      image: avarena,
+      tags: [ "UI/UX", "Backend"],
+      tech: ["React", "TypeScript"],
+      github: "https://github.com/Raju-kumar-vishwakarma/av-arena",
+      demo: "https://www.avarena.dev/",
+    },
+    {
+      title: "Library Management Dashboard",
+      description:
+        "The Library Management Dashboard is a modern web application built to simplify how libraries manage their books, users, and administrative operations. It provides an intuitive interface for both admins and students to easily access and organize library resources.",
+      image: library,
+      tags: ["Web", "UI/UX","Mobile"],
+      tech: ["React", "Tailwind"],
+      github: "https://github.com/Raju-kumar-vishwakarma/XYZ-Library",
+      demo: "https://xyz-library.vercel.app/",
     },
     {
       title: "Fitness Tracking App",
@@ -125,14 +127,14 @@ const ProjectFilters = () => {
                   <Button variant="glass" size="sm" asChild>
                     <a
                       href={project.github}
-                      target="_blank"
+                        target="blank"
                       rel="noopener noreferrer"
                     >
                       <Github className="w-4 h-4" />
                     </a>
                   </Button>
                   <Button variant="default" size="sm" asChild>
-                    <Link to={project.demo} target="_blank" >
+                    <Link to={project.demo} target="blank" >
                       <ExternalLink className="w-4 h-4" />
                     </Link>
                   </Button>
@@ -143,7 +145,16 @@ const ProjectFilters = () => {
                 <h3 className="text-xl font-bold mb-2 gradient-text">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p
+                  className="text-muted-foreground text-sm mb-4"
+                  style={{
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
                   {project.description}
                 </p>
 
