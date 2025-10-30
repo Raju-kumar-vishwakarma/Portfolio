@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import anishow from "../assets/anishow.png";
 import avarena from "../assets/avarena.png";
 import library from "../assets/xyzlibrary.png";
-import EduPlatform from "../assets/eduplatform.png";
+import EduPlatform from "../assets/EduPlatform.png";
 
 const ProjectFilters = () => {
   const [activeFilter, setActiveFilter] = useState("All");
