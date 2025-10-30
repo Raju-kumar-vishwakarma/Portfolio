@@ -47,7 +47,7 @@ const Certifications = () => {
             <span className="text-sm text-muted-foreground">Professional Credentials</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Certifications</span>
+            <span className="text-primary ">Certifications</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Industry-recognized certifications validating my expertise

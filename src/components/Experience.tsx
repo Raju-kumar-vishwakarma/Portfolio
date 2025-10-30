@@ -53,7 +53,7 @@ const Experience = () => {
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Work <span className="gradient-text">Experience</span>
+            Work <span className="text-primary ">Experience</span>
           </h2>
           <p className="text-muted-foreground text-lg">
             My professional journey and achievements
@@ -88,7 +88,7 @@ const Experience = () => {
                       <span className="text-sm font-medium">{exp.period}</span>
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-1 gradient-text">
+                    <h3 className="text-2xl font-bold mb-1 text-primary ">
                       {exp.title}
                     </h3>
 

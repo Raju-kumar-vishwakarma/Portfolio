@@ -70,7 +70,7 @@ const Hero = () => {
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
           Hi, I'm{" "}
-          <span className="gradient-text">Raju Vishwa</span>
+          <span className="text-primary">Raju Vishwa</span>
         </h1>
 
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto h-8">

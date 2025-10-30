@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import anishow from "../assets/anishow.png";
 import avarena from "../assets/avarena.png";
 import library from "../assets/xyzlibrary.png";
+import EduPlatform from "../assets/eduplatform.png";
 
 const ProjectFilters = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -55,15 +56,15 @@ const ProjectFilters = () => {
       demo: "#",
     },
     {
-      title: "Real Estate Portal",
+      title: "EduPlatform",
       description:
-        "Property listing platform with virtual tours and mortgage calculator",
+        "EduPlatform is an intuitive, web-based learning management system that empowers learners and educators alike to connect, teach, and grow — without boundaries. With the core motto “Learn Anything, Anytime, Anywhere”, the platform provides a flexible online environment for creating, accessing, and managing educational content.",
       image:
-        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
-      tags: ["Web", "UI/UX"],
-      tech: ["Next.js", "PostgreSQL"],
-      github: "#",
-      demo: "#",
+        EduPlatform,
+      tags: ["Web", "UI/UX" ,"Mobile"],
+      tech: ["React", "PostgreSQL","kotlin"],
+      github: "https://github.com/Raju-kumar-vishwakarma/LMS",
+      demo: "https://lms-eight-olive.vercel.app/",
     },
     {
       title: "Social Media Analytics",
@@ -88,7 +89,7 @@ const ProjectFilters = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="gradient-text">Projects</span>
+            Featured <span className="text-primary ">Projects</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
             Explore my work across different categories
@@ -142,7 +143,7 @@ const ProjectFilters = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 gradient-text">
+                <h3 className="text-xl font-bold mb-2 text-accent">
                   {project.title}
                 </h3>
                 <p

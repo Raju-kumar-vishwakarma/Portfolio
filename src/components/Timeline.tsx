@@ -88,7 +88,7 @@ const Timeline = () => {
             <span className="text-sm text-muted-foreground">My Journey</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Career <span className="gradient-text">Timeline</span>
+            Career <span className="text-primary ">Timeline</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             A chronological view of my professional and educational journey

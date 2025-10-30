@@ -95,7 +95,7 @@ const Stats = () => {
                 <stat.icon className="w-7 h-7 md:w-8 md:h-8 text-primary" />
               </div>
               
-              <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
+              <div className="text-4xl md:text-5xl font-bold  text-accent mb-2">
                 <AnimatedNumber end={stat.value} />
                 {stat.suffix}
               </div>

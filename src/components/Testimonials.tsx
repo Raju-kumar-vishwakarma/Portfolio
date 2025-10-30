@@ -29,7 +29,7 @@ const Testimonials = () => {
     <section id="testimonials" className="py-20 px-6 matrix-bg">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center animate-fade-in">
-          Client <span className="gradient-text">Testimonials</span>
+          Client <span className="text-primary">Testimonials</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 animate-fade-in">
           What clients say about working with me

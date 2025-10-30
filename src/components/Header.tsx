@@ -49,7 +49,7 @@ const Header = () => {
             className="text-2xl font-bold hover:opacity-80 smooth-transition flex items-center gap-2"
           >
             <span className="text-primary">{"{ "}</span>
-            <span className="gradient-text">Raju Vishwa</span>
+            <span className="">Raju Vishwa</span>
             <span className="text-primary">{" }"}</span>
           </button>
 
@@ -97,7 +97,7 @@ const Header = () => {
                 <div className="flex flex-col gap-6 mt-8">
                   <div className="text-2xl font-bold mb-4 flex items-center gap-2">
                     <span className="text-primary">{"{ "}</span>
-                    <span className="gradient-text">Raju Vishwa</span>
+                    <span className="text-primary ">Raju Vishwa</span>
                     <span className="text-primary">{" }"}</span>
                   </div>
 

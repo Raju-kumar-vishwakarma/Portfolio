@@ -91,7 +91,7 @@ const getColorClasses = (color: string) => {
       return {
         bg: 'bg-primary/20',
         hoverBg: 'group-hover:bg-primary/30',
-        text: 'text-primary',
+        text: ' text-accent',
         glow: 'glow-effect'
       };
     default:
@@ -109,7 +109,7 @@ const Skills = () => {
     <section  className="py-20 px-6 relative matrix-bg">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center animate-fade-in">
-          Skills & <span className="gradient-text">Technologies</span>
+          Skills & <span className="text-primary ">Technologies</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

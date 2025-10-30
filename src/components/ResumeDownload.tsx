@@ -52,7 +52,7 @@ const ResumeDownload = () => {
                 <FileText className="w-8 h-8 text-primary" />
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold mb-3 gradient-text">
+              <h2 className="text-3xl md:text-4xl font-bold mb-3 text-primary ">
                 Ready to Work Together?
               </h2>
 

@@ -33,7 +33,7 @@ const About = () => {
       
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center animate-fade-in">
-          About <span className="gradient-text">Me</span>
+          About <span className=" text-accent ">Me</span>
         </h2>
 
         <div className="glass-card rounded-2xl p-8 md:p-12 animate-scale-in cyber-border">
@@ -55,7 +55,7 @@ const About = () => {
               <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/30 smooth-transition glow-effect">
                 <Shield className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-primary">1+ Years Experience</h3>
+              <h3 className="text-xl font-bold mb-2  text-accent">1+ Years Experience</h3>
               <p className="text-muted-foreground">Building quality apps and websites</p>
             </div>
 
@@ -69,9 +69,9 @@ const About = () => {
 
             <div className="glass-card p-6 rounded-xl hover-scale smooth-transition cyber-border group">
               <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/30 smooth-transition glow-effect">
-                <Bug className="w-6 h-6 text-primary" />
+                <Bug className="w-6 h-6  text-accent" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-primary">Happy Clients</h3>
+              <h3 className="text-xl font-bold mb-2  text-accent">Happy Clients</h3>
               <p className="text-muted-foreground">Satisfied customers worldwide</p>
             </div>
           </div>
