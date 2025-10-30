@@ -42,10 +42,6 @@ const Certifications = () => {
     <section id="certifications" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full mb-4">
-            <Award className="w-4 h-4 text-primary" />
-            <span className="text-sm text-muted-foreground">Professional Credentials</span>
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-primary ">Certifications</span>
           </h2>
