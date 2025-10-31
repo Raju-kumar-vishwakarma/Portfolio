@@ -16,7 +16,8 @@ const Hero = () => {
         "Android & Web Developer",
         "UI/UX Designer",
         "Mobile App Specialist",
-        "Creative Problem Solver"
+        "Creative Problem Solver",
+        "Cyber Security "
       ],
       typeSpeed: 50,
       backSpeed: 30,

@@ -36,9 +36,9 @@ const Index = () => {
       {/* <AnimatedSection animation="slide-right">
         <Experience />
       </AnimatedSection> */}
-      <AnimatedSection animation="scale">
+      {/* <AnimatedSection animation="scale">
         <Skills />
-      </AnimatedSection>
+      </AnimatedSection> */}
       <AnimatedSection animation="fade">
         <Certifications />
       </AnimatedSection>

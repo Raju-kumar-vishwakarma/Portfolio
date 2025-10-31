@@ -115,7 +115,7 @@ const ProjectFilters = () => {
           {filteredProjects.map((project, index) => (
             <div
               key={project.title}
-              className="glass-card cyber-border rounded-2xl overflow-hidden hover:scale-105 smooth-transition animate-fade-in"
+              className="glass-card border rounded-2xl overflow-hidden hover:scale-105 smooth-transition animate-fade-in" // <-- Replaced cyber-border with border
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative h-48 overflow-hidden group">
@@ -124,7 +124,7 @@ const ProjectFilters = () => {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 smooth-transition flex items-end justify-center gap-3 pb-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 smooth-transition flex items-end justify-center gap-3 pb-4 backdrop-blur-sm"> {/* <-- BLUR ADDED HERE */}
                   <Button variant="glass" size="sm" asChild>
                     <a
                       href={project.github}

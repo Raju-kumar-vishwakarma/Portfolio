@@ -82,24 +82,21 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu */}
+
           <div className="lg:hidden flex items-center gap-2">
             <ThemeToggle />
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
-                  <Menu className="w-7 h-7" />
+                  {/* I've made this w-9 h-9 to make it more obvious */}
+                  <Menu className="w-9 h-9" /> 
                 </Button>
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-[300px] sm:w-[400px] [&>button]:top-10 [&>button]:right-10 [&>button>svg]:h-6 [&>button>svg]:w-6 [&>button>svg]:stroke-[4]" // <-- ICON SIZE UPDATED HERE
+                className="w-[300px] sm:w-[400px] [&>button]:top-10 [&>button]:right-10 [&>button>svg]:h-6 [&>button>svg]:w-6 [&>button>svg]:stroke-[4]"
               >
                 <div className="flex flex-col gap-6 mt-8">
-                  <div className="text-2xl font-bold mb-4 flex items-center gap-2">
-                    <span className="text-primary">{"{ "}</span>
-                    <span className="text-primary ">Raju Vishwa</span>
-                    <span className="text-primary">{" }"}</span>
-                  </div>
 
                   <nav className="flex flex-col gap-2">
                     {navItems.map((item) => (
