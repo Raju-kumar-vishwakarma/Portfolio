@@ -22,7 +22,7 @@ const Hero = () => {
         "UI/UX Designer",
         "Mobile App Specialist",
         "Creative Problem Solver",
-        "Cyber Security "
+        "Cyber Security"
       ],
       typeSpeed: 50,
       backSpeed: 30,
@@ -155,7 +155,7 @@ const Hero = () => {
             src={profilePic} // Uses the imported image
             alt="Raju Vishwa"
             // <-- SIZE BADI HUI: w-64 se w-56 (mobile) aur lg:w-96 (desktop)
-            className="rounded-full w-40 h-40 lg:w-96 lg:h-96 object-cover border-4 border-primary/50 shadow-xl glow-effect"
+            className="rounded-full w-40 h-40 lg:w-96 lg:h-96 object-cover border-4 border-primary/50 shadow-xl glow-effect mt-6 "
           />
         </div>
 
