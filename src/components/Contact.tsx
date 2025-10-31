@@ -49,7 +49,7 @@ const Contact = () => {
     <section id="contact" className="py-20 px-6 relative matrix-bg">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center animate-fade-in">
-          Get In <span className="gradient-text">Touch</span>
+          Get In <span className="text-primary">Touch</span>
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

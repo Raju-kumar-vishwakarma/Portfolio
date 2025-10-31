@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ArrowDown, Shield, Lock, Terminal, Copy, Check } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown, Shield, Lock, Terminal, Copy, Check ,Instagram} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Typed from "typed.js";
 
@@ -18,11 +18,16 @@ const Hero = () => {
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
       strings: [
-        "Android & Web Developer",
-        "UI/UX Designer",
-        "Mobile App Specialist",
-        "Creative Problem Solver",
-        "Cyber Security"
+      "React Native Developer",
+      "Android Native Developer", 
+      "Web Developer",
+      "Grafhic Designer",
+      "Creative Problem Solver",
+      "Video Editor",
+      "Leadership Skills",
+      "UI/UX Designer", 
+      "Cyber Security",
+      "Full Stack Developer" 
       ],
       typeSpeed: 50,
       backSpeed: 30,
@@ -67,21 +72,14 @@ const Hero = () => {
         <Terminal className="w-14 h-14 text-accent" />
       </div>
 
-      {/* <-- 2. UPDATED MAIN WRAPPER
-        I changed this from 'text-center max-w-4xl' to a grid
-        that will hold both your text and the new image.
-      */}
+
       <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
-        {/* <-- 3. TEXT CONTENT COLUMN
-          All your original text is now in this column.
-          I changed text/button alignment to 'lg:text-left'
-          and 'lg:justify-start'
-        */}
+
         <div className="text-center lg:text-left animate-fade-in order-2 lg:order-1">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
             Hi, I'm{" "}
-            <span className="text-primary">Raju Vishwa</span>
+            <span className="text-primary">Raju Vishwakarma</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto lg:mx-0 h-8">
@@ -129,6 +127,14 @@ const Hero = () => {
             >
               <Linkedin className="w-6 h-6" />
             </a>
+            <a
+              href="https://www.instagram.com/raju_vishwa.karma/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary hover:scale-125 smooth-transition"
+            >
+              <Instagram className="w-6 h-6" />
+            </a>
             <button 
               onClick={copyEmail}
               className="text-muted-foreground hover:text-primary hover:scale-125 smooth-transition relative group"
@@ -167,7 +173,7 @@ const Hero = () => {
         onClick={() => scrollToSection("about")}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-muted-foreground hover:text-primary smooth-transition"
       >
-        <ArrowDown className="w-6 h-6" />
+        <ArrowDown className="w-6 h-6 mt-5" />
       </button>
 
     </section>
