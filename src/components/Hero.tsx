@@ -154,7 +154,8 @@ const Hero = () => {
           <img
             src={profilePic} // Uses the imported image
             alt="Raju Vishwa"
-            className="rounded-full w-64 h-64 lg:w-96 lg:h-96 object-cover border-4 border-primary/50 shadow-xl glow-effect"
+            // <-- SIZE BADI HUI: w-64 se w-56 (mobile) aur lg:w-96 (desktop)
+            className="rounded-full w-40 h-40 lg:w-96 lg:h-96 object-cover border-4 border-primary/50 shadow-xl glow-effect"
           />
         </div>
 
