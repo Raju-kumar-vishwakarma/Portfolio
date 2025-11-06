@@ -59,7 +59,7 @@ const Certifications = () => {
               <CardContent className="p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 smooth-transition">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/30 smooth-transition glow-effect" >
                       <Award className="w-6 h-6 text-primary" />
                     </div>
                     <div>

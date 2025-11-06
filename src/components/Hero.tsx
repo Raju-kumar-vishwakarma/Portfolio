@@ -120,7 +120,7 @@ const Hero = () => {
               <Github className="w-6 h-6" />
             </a>
             <a 
-              href="https://www.linkedin.com/in/raju-kumar-a134b9342/" 
+              href="https://www.linkedin.com/in/raju-vishwakarma-a134b9342/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary hover:scale-125 smooth-transition"
@@ -173,7 +173,7 @@ const Hero = () => {
         onClick={() => scrollToSection("about")}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-muted-foreground hover:text-primary smooth-transition"
       >
-        <ArrowDown className="w-6 h-6 mt-5" />
+        {/* <ArrowDown className="w-6 h-6 mt-5" /> */}
       </button>
 
     </section>

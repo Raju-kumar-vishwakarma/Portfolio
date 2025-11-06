@@ -46,17 +46,17 @@ const Index = () => {
         <Timeline />
       </AnimatedSection> */}
       <ProjectFilters />
-      <AnimatedSection animation="slide-right">
+      {/* <AnimatedSection animation="slide-right">
         <Testimonials />
-      </AnimatedSection>
+      </AnimatedSection> */}
       <ResumeDownload />
-      <AnimatedSection animation="fade">
+      <AnimatedSection animation="slide-right">
         <Contact />
       </AnimatedSection>
       <Footer />
       <BackToTop />
       <ShareButton />
-      <KeyboardShortcutsHelper />
+      {/* <KeyboardShortcutsHelper /> */}
       <ThemeCustomizer />
     </div>
   );
