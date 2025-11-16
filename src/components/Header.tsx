@@ -1,31 +1,14 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, FileDown, Printer } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import ThemeToggle from "@/components/ThemeToggle";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (id: string) => {
-    setMobileMenuOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+  // 1. Active section track karne ke liye naya state
+  const [activeSection, setActiveSection] = useState("hero");
 
   const navItems = [
     { label: "Home", id: "hero" },
@@ -34,6 +17,46 @@ const Header = () => {
     { label: "Resume", id: "resume" },
     { label: "Projects", id: "projects" },
   ];
+
+  // Scroll effect for header background
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // 2. IntersectionObserver logic: Ye check karega ki kaunsa section screen par hai
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]"); // Saare sections select karein
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id); // Active ID set karein
+          }
+        });
+      },
+      {
+        // Threshold 0.5 ka matlab jab section 50% dikhega tab active hoga
+        // Aap ise adjust kar sakte hain (e.g., 0.2 se 0.6 tak)
+        threshold: 0.5, 
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => sections.forEach((section) => observer.unobserve(section));
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    setMobileMenuOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    // Click karte hi turant active set karein (optional, UX ke liye acha hai)
+    setActiveSection(id);
+  };
 
   return (
     <header
@@ -59,7 +82,12 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="px-6 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground hover:bg-accent/50 smooth-transition"
+                // 3. Conditional Styling: Agar active hai to primary color, nahi to muted
+                className={`px-6 py-2 rounded-full text-sm smooth-transition ${
+                  activeSection === item.id
+                    ? "text-primary-foreground bg-primary font-medium shadow-md" // Active Style
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50" // Inactive Style
+                }`}
               >
                 {item.label}
               </button>
@@ -82,14 +110,12 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu */}
-
           <div className="lg:hidden flex items-center gap-2">
             <ThemeToggle />
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
-                  {/* I've made this w-9 h-9 to make it more obvious */}
-                  <Menu className="w-9 h-9" /> 
+                  <Menu className="w-9 h-9" />
                 </Button>
               </SheetTrigger>
               <SheetContent
@@ -97,13 +123,17 @@ const Header = () => {
                 className="w-[300px] sm:w-[400px] [&>button]:top-10 [&>button]:right-10 [&>button>svg]:h-6 [&>button>svg]:w-6 [&>button>svg]:stroke-[4]"
               >
                 <div className="flex flex-col gap-6 mt-8">
-
                   <nav className="flex flex-col gap-2">
                     {navItems.map((item) => (
                       <button
                         key={item.id}
                         onClick={() => scrollToSection(item.id)}
-                        className="text-left px-4 py-3 rounded-lg text-lg text-muted-foreground hover:text-foreground hover:bg-accent/50 smooth-transition"
+                        // Mobile Menu mein bhi active color dikhana hai
+                        className={`text-left px-4 py-3 rounded-lg text-lg smooth-transition ${
+                            activeSection === item.id
+                            ? "text-primary font-semibold bg-accent" 
+                            : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                        }`}
                       >
                         {item.label}
                       </button>
