@@ -8,7 +8,7 @@ const Certifications = () => {
       name: "AWS Certified Solutions Architect",
       issuer: "Amazon Web Services",
       date: "2024",
-      credentialId: "ABC123XYZ",
+      credentialId: "AGDDEFU2462D",
       link: "#",
       skills: ["Cloud Architecture", "AWS", "Infrastructure"]
     },
@@ -16,7 +16,7 @@ const Certifications = () => {
       name: "Google Professional Cloud Developer",
       issuer: "Google Cloud",
       date: "2023",
-      credentialId: "GCP456DEF",
+      credentialId: "GCP456DEF3D7G",
       link: "#",
       skills: ["GCP", "DevOps", "Microservices"]
     },
@@ -24,7 +24,7 @@ const Certifications = () => {
       name: "Certified Kubernetes Administrator",
       issuer: "Cloud Native Computing Foundation",
       date: "2023",
-      credentialId: "CKA789GHI",
+      credentialId: "CKA789GHI4GE6",
       link: "#",
       skills: ["Kubernetes", "Docker", "Container Orchestration"]
     },
@@ -32,7 +32,7 @@ const Certifications = () => {
       name: "Meta React Developer Certificate",
       issuer: "Meta",
       date: "2022",
-      credentialId: "META321JKL",
+      credentialId: "META63F84G",
       link: "#",
       skills: ["React", "JavaScript", "Frontend"]
     }
