@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // 1. Active section track karne ke liye naya state
   const [activeSection, setActiveSection] = useState("hero");
 
   const navItems = [
     { label: "Home", id: "hero" },
     { label: "About Me", id: "about" },
-    { label: "Services", id: "services" },
-    { label: "Resume", id: "resume" },
+    { label: "Certifications", id: "certifications" },
     { label: "Projects", id: "projects" },
+    { label: "Resume", id: "resume" },
   ];
 
   // Scroll effect for header background
@@ -27,21 +26,19 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 2. IntersectionObserver logic: Ye check karega ki kaunsa section screen par hai
+  // IntersectionObserver logic
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]"); // Saare sections select karein
+    const sections = document.querySelectorAll("section[id]");
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id); // Active ID set karein
+            setActiveSection(entry.target.id);
           }
         });
       },
       {
-        // Threshold 0.5 ka matlab jab section 50% dikhega tab active hoga
-        // Aap ise adjust kar sakte hain (e.g., 0.2 se 0.6 tak)
         threshold: 0.5, 
       }
     );
@@ -54,7 +51,6 @@ const Header = () => {
   const scrollToSection = (id: string) => {
     setMobileMenuOpen(false);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    // Click karte hi turant active set karein (optional, UX ke liye acha hai)
     setActiveSection(id);
   };
 
@@ -82,11 +78,10 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                // 3. Conditional Styling: Agar active hai to primary color, nahi to muted
                 className={`px-6 py-2 rounded-full text-sm smooth-transition ${
                   activeSection === item.id
-                    ? "text-primary-foreground bg-primary font-medium shadow-md" // Active Style
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50" // Inactive Style
+                    ? "text-primary-foreground bg-primary font-medium shadow-md"
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
                 }`}
               >
                 {item.label}
@@ -115,23 +110,26 @@ const Header = () => {
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
-                  <Menu className="w-9 h-9" />
+                  {/* FIXED: Icon size w-9 se w-6 kiya */}
+                  <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent
                 side="right"
                 className="w-[300px] sm:w-[400px] [&>button]:top-10 [&>button]:right-10 [&>button>svg]:h-6 [&>button>svg]:w-6 [&>button>svg]:stroke-[4]"
               >
+                {/* FIXED: Added SheetTitle with sr-only to fix error and layout */}
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+
                 <div className="flex flex-col gap-6 mt-8">
                   <nav className="flex flex-col gap-2">
                     {navItems.map((item) => (
                       <button
                         key={item.id}
                         onClick={() => scrollToSection(item.id)}
-                        // Mobile Menu mein bhi active color dikhana hai
                         className={`text-left px-4 py-3 rounded-lg text-lg smooth-transition ${
                             activeSection === item.id
-                            ? "text-primary font-semibold bg-accent" 
+                            ? "text-primary font-semibold " 
                             : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
                         }`}
                       >
