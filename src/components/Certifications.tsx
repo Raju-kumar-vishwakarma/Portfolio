@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 const Certifications = () => {
   const certifications = [
     {
-      name: "AWS Certified Solutions Architect",
+      name: "AWS Certified Solutions ",
       issuer: "Amazon Web Services",
       date: "2024",
       credentialId: "AGDDEFU2462D",
@@ -13,7 +13,7 @@ const Certifications = () => {
       skills: ["Cloud Architecture", "AWS", "Infrastructure"]
     },
     {
-      name: "Google Professional Cloud Developer",
+      name: "Google Cloud ",
       issuer: "Google Cloud",
       date: "2023",
       credentialId: "GCP456DEF3D7G",

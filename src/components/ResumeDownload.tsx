@@ -3,7 +3,7 @@ import { FileDown, FileText, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import React from "react";
 import ME from "../assets/me.jpeg";
-import Resume from "../assets/resume.pdf";
+import Resume from "../assets/raju-resume.pdf";
 
 const ResumeDownload = () => {
   const { toast } = useToast();

@@ -38,17 +38,24 @@ const About = () => {
 
         <div className="glass-card rounded-2xl p-8 md:p-12 animate-scale-in cyber-border">
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-            I'm a versatile developer specializing in{" "}
-            <span className="text-primary font-semibold">Android & Web Development</span>{" "}
-            with a strong foundation in <span className="text-primary font-semibold">UI/UX Design</span>. 
-            I create end-to-end digital solutions that are not only functional but also beautiful and intuitive to use.
-          </p>
-          
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-            From native Android apps to modern web applications, I bring ideas to life with clean code, 
-            thoughtful design, and a user-first approach. My design background helps me bridge the gap 
-            between aesthetics and functionality, creating experiences that users love.
-          </p>
+  I'm a versatile developer specializing in{" "}
+  <span className="text-primary font-semibold">Android & Web Development</span>{" "}
+  with a strong foundation in{" "}
+  <span className="text-primary font-semibold">UI/UX Design</span>. 
+  I build complete digital solutions that are functional, clean, and easy to use.
+</p>
+
+<p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+  From native Android apps to modern web applications, I bring ideas to life 
+  with clean code, thoughtful UI, and a user-first approach. My design background 
+  helps me connect aesthetics with functionality to create smooth and enjoyable user experiences.
+</p>
+
+<p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+  I enjoy working on real projects, learning new technologies, and improving my 
+  skills in full-stack development and cybersecurity. I focus on creating simple, 
+  secure, and scalable apps that solve real problems.
+</p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
             <div className="glass-card p-6 rounded-xl hover-scale smooth-transition cyber-border group">
