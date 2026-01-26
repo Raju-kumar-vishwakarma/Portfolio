@@ -16,4 +16,10 @@
     <loc>https://rajuvishwa.dev/contact</loc>
     <priority>0.7</priority>
   </url>
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://rajuvishwa.dev/blog/cyberguard-tech-sprint-experience</loc>
+    <lastmod>2026-01-01</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>

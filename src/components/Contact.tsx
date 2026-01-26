@@ -65,7 +65,7 @@ const Contact = () => {
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-4 glass-card p-4 rounded-lg cyber-border group hover-scale smooth-transition">
+              <div className="flex items-center gap-4 glass-card p-4 rounded-lg cyber-border group  smooth-transition">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 smooth-transition glow-effect">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
@@ -75,7 +75,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 glass-card p-4 rounded-lg cyber-border group hover-scale smooth-transition">
+              <div className="flex items-center gap-4 glass-card p-4 rounded-lg cyber-border group  smooth-transition">
                 <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center group-hover:bg-accent/30 smooth-transition glow-blue">
                   <Phone className="w-6 h-6 text-accent" />
                 </div>
@@ -85,7 +85,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 glass-card p-4 rounded-lg cyber-border group hover-scale smooth-transition">
+              <div className="flex items-center gap-4 glass-card p-4 rounded-lg cyber-border group  smooth-transition">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 smooth-transition glow-effect">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>

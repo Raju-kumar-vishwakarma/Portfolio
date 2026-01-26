@@ -6,6 +6,25 @@
 
     <title>Raju Vishwa - Full Stack Web Developer | Portfolio</title>
 
+    <!-- Google Consent Mode v2 (GDPR Compliance) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied'
+      });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WNP3FGKY3M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WNP3FGKY3M');
+    </script>
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#000000" />
     <meta name="msapplication-TileColor" content="#000000" />
@@ -16,10 +35,17 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://rajuvishwa.dev" />
+    
+    <!-- Blog Post Meta Tags (will be overridden by React for individual posts) -->
+    <meta property="og:type" content="article" />
 
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" as="image" href="/logo.png" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <!-- Basic SEO -->
     <meta
@@ -462,6 +488,115 @@
         "name": "Raju Vishwa - Full Stack Web Developer Portfolio",
         "description": "Professional portfolio of Raju Vishwa, a Full Stack Web Developer from Bhilai, India",
         "url": "https://rajuvishwa.dev"
+      }
+    </script>
+
+    <!-- JSON-LD Schema: Blog -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "@id": "https://rajuvishwa.dev/blog",
+        "name": "Raju Vishwa Technical Blog",
+        "description": "Technical articles and insights about web development, cybersecurity, React, TypeScript, Node.js, and full-stack engineering by Raju Vishwa",
+        "url": "https://rajuvishwa.dev/blog",
+        "author": {
+          "@id": "https://rajuvishwa.dev/#person"
+        },
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "@id": "https://rajuvishwa.dev/blog/cyberguard-tech-sprint-experience",
+            "headline": "CyberGuard | Tech Sprint Experience",
+            "description": "My experience presenting CyberGuard at Tech Sprint, challenging misconceptions about cybersecurity, and why digital safety tools should be accessible to everyone",
+            "image": "https://rajuvishwa.dev/assets/blogs/cybershield.png",
+            "datePublished": "2026-01-01",
+            "dateModified": "2026-01-01",
+            "author": {
+              "@id": "https://rajuvishwa.dev/#person"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Raju Vishwa",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://rajuvishwa.dev/logo.png"
+              }
+            },
+            "keywords": ["Cyber Security", "AI", "Projects", "Innovation", "CyberGuard"],
+            "articleSection": "Technology",
+            "wordCount": 450
+          }
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD Schema: CollectionPage for Blog Archive -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": "https://rajuvishwa.dev/blog",
+        "name": "Raju Vishwa's Technical Blog",
+        "description": "A collection of articles about web development, cybersecurity, and modern technologies",
+        "url": "https://rajuvishwa.dev/blog",
+        "creator": {
+          "@id": "https://rajuvishwa.dev/#person"
+        },
+        "mainEntity": {
+          "@type": "Blog",
+          "@id": "https://rajuvishwa.dev/blog"
+        }
+      }
+    </script>
+
+    <!-- JSON-LD Schema: FAQ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Who is Raju Vishwa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Raju Vishwa (Raju Kumar Vishwakarma) is a Full Stack Web Developer and UI/UX Designer from Bhilai, India, specializing in React, TypeScript, Node.js, and modern web technologies."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What services does Raju Vishwa offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Raju Vishwa offers Full Stack Web Development, React Development, UI/UX Design, Custom Web Applications, Mobile App Development with React Native, and Technical Consulting services."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What technologies does Raju Vishwa work with?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Raju Vishwa works with React.js, TypeScript, JavaScript, Node.js, Express.js, MongoDB, Firebase, React Native, Next.js, Tailwind CSS, and other modern web technologies."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is Raju Vishwa located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Raju Vishwa is based in Bhilai, Chhattisgarh, India and works with clients globally on web development projects."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to contact Raju Vishwa for web development projects?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can contact Raju Vishwa via email at rajuvishwa012@gmail.com or through the contact form on rajuvishwa.dev. He is also available on LinkedIn and GitHub."
+            }
+          }
+        ]
       }
     </script>
   </head>

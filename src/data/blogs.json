@@ -1,0 +1,29 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "CyberGuard | Tech Sprint Experience",
+      "content": [
+        "Recently, I presented my cybersecurity project CyberGuard at a Tech Sprint event.",
+        "Our team was scheduled in the last slot. We were officially given 5 minutes, but the presentation was stopped after only 1–2 minutes. Because of this, we could not fully explain the project architecture, features, and real-world use cases.",
+        "During the evaluation, the discussion focused only on one feature (phishing detection). Other important modules such as breach detection, DNS & SSL security, malware scanning, monitoring, and reporting were not reviewed.",
+        "## The judge also told us:",
+        "- \"I am already aware of cyber fraud and take full care.\"",
+        "- The project is \"only suitable for housewives.\"",
+        "This is where the concern arises.",
+        "CyberGuard is designed with a simple and user-friendly interface so that non-technical users can easily understand and use cybersecurity tools, while also offering advanced security features for students, professionals, businesses, and families. Cybersecurity tools are not built only for people who already feel secure; they are meant to protect everyone, as cyber fraud does not depend on awareness, profession, or gender. CyberGuard is an AI-powered cybersecurity platform built with multiple layers of security, not a single use case or a single type of user, and judging such a system based on only one feature, without giving a proper chance to explain, does not reflect the real value of the project.",
+        "## Team Members:",
+        "Sonam Yadav, Muskan Sharma, Vani Chandra",
+        "Respectfully thanking Dr Jyoti Upadhyay for the guidance, motivation, and support.",
+        "#CyberSecurity #TechSprint #AI #Projects #LearningByBuilding #Growth #CyberAwareness #InformationSecurity #AIinCyberSecurity #DigitalSafety #SecureInternet #Rungta #GDRCST #RCET #RIU"
+      ],
+      "date": "2026-01-01",
+      "readTime": "3 min read",
+      "category": "Cyber Security",
+      "tags": ["Cyber Security", "AI", "Projects", "Innovation"],
+      "slug": "cyberguard-tech-sprint-experience",
+      "image": "/assets/blogs/cybershield.png",
+      "author": "Raju Vishwakarma"
+    }
+  ]
+}

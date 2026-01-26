@@ -17,6 +17,7 @@ import Timeline from "@/components/Timeline";
 import ShareButton from "@/components/ShareButton";
 import AnimatedSection from "@/components/AnimatedSection";
 import KeyboardShortcutsHelper from "@/components/KeyboardShortcutsHelper";
+import Blog from "@/components/Blog";
 import { useKeyboardShortcuts } from "@/hooks/useKeyboardShortcuts";
 
 const Index = () => {
@@ -27,9 +28,9 @@ const Index = () => {
       <ScrollProgress />
       <Header />
       <Hero />
-      <AnimatedSection animation="fade">
+      {/* <AnimatedSection animation="fade">
         <Stats />
-      </AnimatedSection>
+      </AnimatedSection> */}
       <AnimatedSection animation="slide-left">
         <About />
       </AnimatedSection>
@@ -49,6 +50,9 @@ const Index = () => {
       {/* <AnimatedSection animation="slide-right">
         <Testimonials />
       </AnimatedSection> */}
+      <AnimatedSection animation="fade">
+        <Blog />
+      </AnimatedSection>
       <ResumeDownload />
       <AnimatedSection animation="slide-right">
         <Contact />
