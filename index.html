@@ -6,11 +6,20 @@
 
     <title>Raju Vishwa - Full Stack Web Developer | Portfolio</title>
 
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="public/logo.png" />
+    <link rel="apple-touch-icon" href="public/logo.png" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://rajuvishwa.dev" />
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Basic SEO -->
     <meta
@@ -19,6 +28,18 @@
     />
     <meta name="author" content="Raju Vishwa" />
     <meta name="robots" content="index, follow" />
+
+    <!-- Geo Targeting -->
+    <meta name="geo.region" content="IN-CG" />
+    <meta name="geo.placename" content="Bhilai, Chhattisgarh, India" />
+    <meta name="geo.position" content="21.1938;81.3509" />
+    <meta name="ICBM" content="21.1938, 81.3509" />
+
+    <!-- Google Site Verification (replace content after setup) -->
+    <meta name="google-site-verification" content="ADD_YOUR_VERIFICATION_CODE_HERE" />
+
+    <!-- Bing Webmaster Verification (replace content after setup) -->
+    <meta name="msvalidate.01" content="ADD_YOUR_BING_VERIFICATION_CODE_HERE" />
 
     <!-- Keywords (Name + Tech + Services) -->
     <meta
@@ -188,28 +209,259 @@
     />
     <meta name="twitter:image" content="https://rajuvishwa.dev/og-image.png" />
 
-    <!-- JSON-LD Schema: Person -->
+    <!-- JSON-LD Schema: Person (Enhanced for Knowledge Panel) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://rajuvishwa.dev/#person",
         "name": "Raju Vishwa",
+        "givenName": "Raju",
+        "familyName": "Vishwakarma",
         "alternateName": [
           "Raju",
           "Raju Kumar",
           "Raju Kumar Vishwakarma",
           "Raju Vishwakarma",
           "Raju OP",
-          "Legend Raju-op"
+          "Legend Raju-op",
+          "Raju Vishwa"
         ],
         "jobTitle": "Full Stack Web Developer",
-        "description": "Full Stack Web Developer, UI/UX Designer and Creative Director from Bhilai, India, building modern, responsive web applications using React, TypeScript, Node.js and clean, scalable architectures.",
+        "description": "Full Stack Web Developer, UI/UX Designer and Creative Director from Bhilai, India, building modern, responsive web applications using React, TypeScript, Node.js and clean, scalable architectures. Co-founder at ZSCircle.",
         "url": "https://rajuvishwa.dev",
+        "email": "rajuvishwa012@gmail.com",
+        "image": "https://rajuvishwa.dev/me.jpeg",
+        "gender": "Male",
+        "birthPlace": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bhilai",
+            "addressRegion": "Chhattisgarh",
+            "addressCountry": "India"
+          }
+        },
+        "nationality": {
+          "@type": "Country",
+          "name": "India"
+        },
         "sameAs": [
           "https://github.com/Raju-kumar-vishwakarma",
           "https://www.linkedin.com/in/raju-vishwakarma-a134b9342",
-          "https://www.instagram.com/raju_vishwa.karma/"
+          "https://www.instagram.com/raju_vishwa.karma/",
+          "https://rajuvishwa.dev"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bhilai",
+          "addressRegion": "Chhattisgarh",
+          "addressCountry": "India"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Rungta College of Engineering & Technology",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bhilai",
+            "addressRegion": "Chhattisgarh",
+            "addressCountry": "India"
+          }
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "ZSCircle",
+          "url": "https://rajuvishwa.dev"
+        },
+        "jobTitle": "Co-founder & Full Stack Web Developer",
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Full Stack Web Developer",
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Bhilai, Chhattisgarh, India"
+          },
+          "skills": [
+            "React.js",
+            "TypeScript",
+            "JavaScript",
+            "Node.js",
+            "React Native",
+            "Android Development",
+            "UI/UX Design",
+            "Full Stack Development",
+            "Web Development",
+            "Mobile Development"
+          ]
+        },
+        "knowsAbout": [
+          "React",
+          "TypeScript",
+          "JavaScript",
+          "Node.js",
+          "React Native",
+          "Android Development",
+          "Web Development",
+          "Full Stack Development",
+          "UI/UX Design",
+          "Graphic Design",
+          "Video Editing",
+          "Cyber Security",
+          "Next.js",
+          "Express.js",
+          "MongoDB",
+          "Firebase",
+          "Git",
+          "GitHub",
+          "Responsive Design",
+          "REST API",
+          "GraphQL"
+        ],
+        "knowsLanguage": [
+          {
+            "@type": "Language",
+            "name": "English"
+          },
+          {
+            "@type": "Language",
+            "name": "Hindi"
+          }
         ]
+      }
+    </script>
+
+    <!-- JSON-LD Schema: WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Raju Vishwa Portfolio",
+        "alternateName": "Raju Vishwakarma Portfolio",
+        "url": "https://rajuvishwa.dev",
+        "description": "Full Stack Web Developer portfolio showcasing React, TypeScript, Node.js projects and expertise",
+        "author": {
+          "@type": "Person",
+          "name": "Raju Vishwa"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://rajuvishwa.dev/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <!-- JSON-LD Schema: Organization (ZSCircle) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ZSCircle",
+        "url": "https://rajuvishwa.dev",
+        "founder": {
+          "@type": "Person",
+          "name": "Raju Vishwa",
+          "jobTitle": "Co-founder"
+        },
+        "description": "Technology organization co-founded by Raju Vishwa"
+      }
+    </script>
+
+    <!-- JSON-LD Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://rajuvishwa.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://rajuvishwa.dev/projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "About",
+            "item": "https://rajuvishwa.dev/about"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Contact",
+            "item": "https://rajuvishwa.dev/contact"
+          }
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD Schema: FAQ (For Knowledge Panel) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Who is Raju Vishwa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Raju Vishwa (Raju Vishwakarma) is a Full Stack Web Developer from Bhilai, Chhattisgarh, India. He specializes in React, TypeScript, JavaScript, and Node.js development, creating modern web applications. He is also the Co-founder of ZSCircle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does Raju Vishwa do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Raju Vishwa is a Full Stack Web Developer specializing in React.js, TypeScript, Node.js, React Native, and Android development. He creates responsive web applications, mobile apps, and provides UI/UX design services."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is Raju Vishwa located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Raju Vishwa is based in Bhilai, Chhattisgarh, India. He provides web development services globally."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What technologies does Raju Vishwa use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Raju Vishwa specializes in React.js, TypeScript, JavaScript, Node.js, React Native, Express.js, MongoDB, Firebase, Next.js, and modern web development technologies. He also has expertise in UI/UX Design, Graphic Design, and Cyber Security."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to contact Raju Vishwa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can contact Raju Vishwa via email at rajuvishwa012@gmail.com or connect through his website https://rajuvishwa.dev, LinkedIn, GitHub, or Instagram."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD Schema: ProfilePage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@id": "https://rajuvishwa.dev/#person"
+        },
+        "name": "Raju Vishwa - Full Stack Web Developer Portfolio",
+        "description": "Professional portfolio of Raju Vishwa, a Full Stack Web Developer from Bhilai, India",
+        "url": "https://rajuvishwa.dev"
       }
     </script>
   </head>
