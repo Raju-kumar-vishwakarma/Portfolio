@@ -7,8 +7,23 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
+import { useCanonicalURL } from "@/hooks/useCanonicalURL";
 
 const queryClient = new QueryClient();
+
+// Wrapper component to apply the canonical URL hook
+const AppWithCanonical = () => {
+  useCanonicalURL();
+  
+  return (
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
+      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -17,12 +32,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <AppWithCanonical />
         </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
