@@ -33,8 +33,14 @@ const blogPosts: BlogPost[] = blogsData.blogs.map((blog: any) => ({
 const Blog = () => {
   const navigate = useNavigate();
 
-  const handleReadMore = (slug: string) => {
-    navigate(`/blog/${slug}`);
+  const handleReadMore = (slug: string, e?: React.MouseEvent) => {
+    if (e?.ctrlKey || e?.metaKey) {
+      // Open in new tab on Ctrl/Cmd + Click
+      window.open(`${window.location.origin}/blog/${slug}`, '_blank');
+    } else {
+      // Regular click - open in current tab
+      navigate(`/blog/${slug}`);
+    }
   };
 
   return (
@@ -61,7 +67,7 @@ const Blog = () => {
               key={post.id} 
               className="group hover:shadow-2xl hover:scale-105 smooth-transition cursor-pointer cyber-card animate-scale-in overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => handleReadMore(post.slug)}
+              onClick={(e) => handleReadMore(post.slug, e as any)}
             >
               <div className="w-full h-48 overflow-hidden bg-muted">
                 <img 
@@ -119,7 +125,11 @@ const Blog = () => {
 
                 <Button 
                   variant="ghost" 
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground smooth-transition"
+                  className="w-full h-10 group-hover:bg-primary group-hover:text-primary-foreground smooth-transition"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleReadMore(post.slug, e as any);
+                  }}
                 >
                   Read More
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 smooth-transition" />

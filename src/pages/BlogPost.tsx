@@ -101,9 +101,9 @@ const BlogPost = () => {
     ogUrl.setAttribute('content', `https://rajuvishwakarma.dev/blog/${post.slug}`);
 
     // Update canonical tag
-    let canonical = document.querySelector('link[rel="canonical"]');
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (!canonical) {
-      canonical = document.createElement('link');
+      canonical = document.createElement('link') as HTMLLinkElement;
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
@@ -137,9 +137,9 @@ const BlogPost = () => {
       }
     };
 
-    let schemaScript = document.getElementById('article-schema');
+    let schemaScript = document.getElementById('article-schema') as HTMLScriptElement;
     if (!schemaScript) {
-      schemaScript = document.createElement('script');
+      schemaScript = document.createElement('script') as HTMLScriptElement;
       schemaScript.id = 'article-schema';
       schemaScript.type = 'application/ld+json';
       document.head.appendChild(schemaScript);
@@ -178,7 +178,7 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header hideNav={true} />
       
       {/* Hero Image */}
       <div className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] w-full overflow-hidden mt-16 md:mt-20">
@@ -194,19 +194,20 @@ const BlogPost = () => {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 -mt-20 sm:-mt-28 md:-mt-32 relative z-10">
         {/* Back Navigation - Hidden when scrolling */}
         {showBackButton && (
-          <div className=" top-16 z-20 mb-6 md:mb-8 flex items-center gap-2 animate-fade-in">
+          <div className=" top-16 z-20 mb-6 md:mb-8 flex items-center gap-2 animate-fade-in cursor-pointer"
+            onClick={() => {
+              navigate("/");
+              setTimeout(() => {
+                const blogSection = document.getElementById('blog');
+                if (blogSection) {
+                  blogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }, 100);
+            }}
+          >
             <Button 
               variant="ghost"
               size="sm"
-              onClick={() => {
-                navigate("/");
-                setTimeout(() => {
-                  const blogSection = document.getElementById('blog');
-                  if (blogSection) {
-                    blogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }, 100);
-              }}
               className="group px-3 h-9 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary/20 hover:to-primary/10 border border-primary/20 hover:border-primary/40 shadow-sm hover:shadow-md smooth-transition"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 smooth-transition  " />
@@ -293,6 +294,21 @@ const BlogPost = () => {
                 </li>
               );
             } 
+            // Links (URLs)
+            else if (paragraph.startsWith('http')) {
+              return (
+                <div key={index} className="my-4">
+                  <a 
+                    href={paragraph} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 underline font-medium text-base"
+                  >
+                    🔗 {paragraph}
+                  </a>
+                </div>
+              );
+            }
             // Regular paragraphs
             else {
               return (

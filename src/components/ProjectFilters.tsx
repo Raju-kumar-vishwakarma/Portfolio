@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Float3D, FlipCard3D } from "@/components/3DAnimations";
 import anishow from "../assets/anishow.png";
 import avarena from "../assets/avarena.png";
 import library from "../assets/xyzlibrary.png";
@@ -113,61 +115,77 @@ const ProjectFilters = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
-            <div
-              key={project.title}
-              className="glass-card border rounded-2xl overflow-hidden hover:scale-105 smooth-transition animate-fade-in" // <-- Replaced cyber-border with border
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="relative h-48 overflow-hidden group">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 smooth-transition flex items-end justify-center gap-3 pb-4 backdrop-blur-sm"> {/* <-- BLUR ADDED HERE */}
-                  <Button variant="glass" size="sm" asChild>
-                    <a
-                      href={project.github}
-                        target="blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="w-4 h-4" />
-                    </a>
-                  </Button>
-                  <Button variant="default" size="sm" asChild>
-                    <Link to={project.demo} target="blank" >
-                      <ExternalLink className="w-4 h-4" />
-                    </Link>
-                  </Button>
+            <Float3D key={project.title} delay={index * 0.1}>
+              <motion.div
+                className="glass-card border rounded-2xl overflow-hidden hover:scale-105 smooth-transition animate-fade-in h-full"
+                style={{ animationDelay: `${index * 0.1}s` }}
+                whileHover={{ 
+                  y: -10,
+                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)"
+                }}
+              >
+                <div className="relative h-48 overflow-hidden group">
+                  <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 smooth-transition"
+                    whileHover={{ scale: 1.15 }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 smooth-transition flex items-end justify-center gap-3 pb-4 backdrop-blur-sm">
+                    <Button variant="glass" size="sm" asChild>
+                      <a
+                        href={project.github}
+                          target="blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="w-4 h-4" />
+                      </a>
+                    </Button>
+                    <Button variant="default" size="sm" asChild>
+                      <Link to={project.demo} target="blank" >
+                        <ExternalLink className="w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
-              </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-accent">
-                  {project.title}
-                </h3>
-                <p
-                  className="text-muted-foreground text-sm mb-4"
-                  style={{
-                    display: "-webkit-box",
-                    WebkitLineClamp: 2,
-                    WebkitBoxOrient: "vertical",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
-                  {project.description}
-                </p>
+                <div className="p-6">
+                  <motion.h3 
+                    className="text-xl font-bold mb-2 text-accent"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                  >
+                    {project.title}
+                  </motion.h3>
+                  <p
+                    className="text-muted-foreground text-sm mb-4"
+                    style={{
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {project.description}
+                  </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, i) => (
+                      <motion.div key={tech}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: i * 0.05 }}
+                      >
+                        <Badge variant="secondary" className="text-xs">
+                          {tech}
+                        </Badge>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </Float3D>
           ))}
         </div>
       </div>

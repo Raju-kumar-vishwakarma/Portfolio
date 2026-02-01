@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Typed from "typed.js";
+import { motion } from "framer-motion";
+import { Float3D, Perspective3DText, Particle3D, Orb3D } from "@/components/3DAnimations";
 
 // <-- 1. IMPORT YOUR IMAGE
 // Make sure to add your image to the 'assets' folder (or similar)
@@ -72,35 +74,30 @@ const Hero = () => {
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background opacity-50" />
 
-      {/* Cyber floating orbs */}
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse glow-effect" />
-      <div
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/15 rounded-full blur-3xl animate-pulse glow-blue"
-        style={{ animationDelay: "1s" }}
-      />
+      {/* 3D Particle Effect */}
+      <Particle3D count={30} className="absolute inset-0 w-full h-full" />
+
+      {/* 3D Animated Orbs */}
+      <Orb3D color="from-primary/30 to-purple-500/20" className="top-1/4 left-1/4 w-72 h-72" />
+      <Orb3D color="from-accent/20 to-blue-500/20" className="bottom-1/4 right-1/4 w-96 h-96" />
 
       {/* Floating tech icons */}
-      <div className="absolute top-20 left-10 animate-bounce-slow opacity-20">
+      <Float3D delay={0} className="absolute top-20 left-10 opacity-20">
         <Shield className="w-16 h-16 text-primary" />
-      </div>
-      <div
-        className="absolute bottom-20 right-20 animate-bounce-slow opacity-20"
-        style={{ animationDelay: "0.5s" }}
-      >
+      </Float3D>
+      <Float3D delay={0.5} className="absolute bottom-20 right-20 opacity-20">
         <Lock className="w-12 h-12 text-primary" />
-      </div>
-      <div
-        className="absolute top-40 right-40 animate-bounce-slow opacity-20"
-        style={{ animationDelay: "1s" }}
-      >
+      </Float3D>
+      <Float3D delay={1} className="absolute top-40 right-40 opacity-20">
         <Terminal className="w-14 h-14 text-accent" />
-      </div>
+      </Float3D>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-left animate-fade-in order-2 lg:order-1">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-            Hi, I'm <span className="text-primary">Raju Vishwakarma</span>
-          </h1>
+          <Perspective3DText 
+            text={`Hi, I'm Raju Vishwakarma`}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
+          />
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto lg:mx-0 h-8">
             <span ref={typedRef}></span>
@@ -177,14 +174,15 @@ const Hero = () => {
           This is the new column for your profile picture.
           It's styled to match your 'cyber' theme.
         */}
-        <div className="flex justify-center animate-scale-in order-1 lg:order-2">
-          <img
+        <Float3D delay={0.2} className="flex justify-center animate-scale-in order-1 lg:order-2">
+          <motion.img
             src={profilePic} // Uses the imported image
             alt="Raju Vishwa"
-            // <-- SIZE BADI HUI: w-64 se w-56 (mobile) aur lg:w-96 (desktop)
-            className="rounded-full w-40 h-40 lg:w-96 lg:h-96 object-cover border-4 border-primary/50 shadow-xl glow-effect mt-6 "
+            className="rounded-full w-40 h-40 lg:w-96 lg:h-96 object-cover border-4 border-primary/50 shadow-xl glow-effect mt-6"
+            whileHover={{ scale: 1.05, rotateZ: 5 }}
+            transition={{ duration: 0.3 }}
           />
-        </div>
+        </Float3D>
       </div>
 
       {/* This scroll-down button was inside the text-center div, 

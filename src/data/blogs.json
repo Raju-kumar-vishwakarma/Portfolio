@@ -23,7 +23,39 @@
       "tags": ["Cyber Security", "AI", "Projects", "Innovation"],
       "slug": "cyberguard-tech-sprint-experience",
       "image": "/assets/blogs/cybershield.png",
-      "author": "Raju Vishwakarma"
+      "author": "Raju Vishwakarma",
+      "link": ""
+    },
+    {
+      "id": 2,
+      "title": "Anishow | Organic Growth & Performance Optimization",
+      "content": [
+        "Really excited to share a recent milestone of my personal projects! 📈",
+        "Over the last 30 days, my anime streaming web project Anishow has experienced strong organic growth, which honestly feels very motivating as a student developer.",
+        "## 📊 Project Analytics (Last 30 Days):",
+        "- 🔹 4,832 Visitors (+149%)",
+        "- 🔹 19,342 Page Views (+121%)",
+        "- 🔹 Bounce Rate: 34%",
+        "This growth wasn't driven by ads — it came from continuous improvements in UI/UX, frontend performance, and SEO-focused content structure, all deployed and monitored using Vercel Analytics.",
+        "## While building Anishow, I worked deeply on:",
+        "- Designing a clean and user-friendly frontend",
+        "- Optimizing page speed and loading performance",
+        "- Structuring pages for better search visibility",
+        "- Understanding real user behavior through analytics",
+        "- Deploying and iterating fast using Vercel",
+        "This project has helped me move beyond \"just coding\" and start thinking more about users, performance, and scalability. Still learning every day, but moments like this really push me to build more and build better 🚀",
+        "I'm open to feedback, suggestions, and collaboration opportunities. Always happy to connect with fellow developers and learners!",
+        "## 🔗 Live Project:",
+        "https://www.anishow.me"
+      ],
+      "date": "2026-02-01",
+      "readTime": "4 min read",
+      "category": "Web Development",
+      "tags": ["Web Development", "Frontend", "ReactJS", "Vercel", "SEO", "Performance", "Analytics"],
+      "slug": "anishow-organic-growth-performance-optimization",
+      "image": "/assets/blogs/anishow.png",
+      "author": "Raju Vishwakarma",
+      "link": "https://www.anishow.me"
     }
   ]
 }

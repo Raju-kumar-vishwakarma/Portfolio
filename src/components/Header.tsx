@@ -4,7 +4,7 @@ import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import ThemeToggle from "@/components/ThemeToggle";
 
-const Header = () => {
+const Header = ({ hideNav = false }: { hideNav?: boolean }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
@@ -74,21 +74,23 @@ const Header = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1 glass-card rounded-full px-2 py-2">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`px-6 py-2 rounded-full text-sm smooth-transition ${
-                  activeSection === item.id
-                    ? "text-primary-foreground bg-primary font-medium shadow-md"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </nav>
+          {!hideNav && (
+            <nav className="hidden lg:flex items-center gap-1 glass-card rounded-full px-2 py-2">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`px-6 py-2 rounded-full text-sm smooth-transition ${
+                    activeSection === item.id
+                      ? "text-primary-foreground bg-primary font-medium shadow-md"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </nav>
+          )}
 
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
@@ -106,53 +108,55 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu */}
-          <div className="lg:hidden flex items-center gap-2">
-            <ThemeToggle />
-            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  {/* FIXED: Icon size w-9 se w-6 kiya */}
-                  <Menu className="w-6 h-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent
-                side="right"
-                className="w-[300px] sm:w-[400px] [&>button]:top-10 [&>button]:right-10 [&>button>svg]:h-6 [&>button>svg]:w-6 [&>button>svg]:stroke-[4]"
-              >
-                {/* FIXED: Added SheetTitle with sr-only to fix error and layout */}
-                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+          {!hideNav && (
+            <div className="lg:hidden flex items-center gap-2">
+              <ThemeToggle />
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    {/* FIXED: Icon size w-9 se w-6 kiya */}
+                    <Menu className="w-6 h-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent
+                  side="right"
+                  className="w-[300px] sm:w-[400px] [&>button]:top-10 [&>button]:right-10 [&>button>svg]:h-6 [&>button>svg]:w-6 [&>button>svg]:stroke-[4]"
+                >
+                  {/* FIXED: Added SheetTitle with sr-only to fix error and layout */}
+                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
 
-                <div className="flex flex-col gap-6 mt-8">
-                  <nav className="flex flex-col gap-2">
-                    {navItems.map((item) => (
-                      <button
-                        key={item.id}
-                        onClick={() => scrollToSection(item.id)}
-                        className={`text-left px-4 py-3 rounded-lg text-lg smooth-transition ${
-                            activeSection === item.id
-                            ? "text-primary font-semibold " 
-                            : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
-                        }`}
+                  <div className="flex flex-col gap-6 mt-8">
+                    <nav className="flex flex-col gap-2">
+                      {navItems.map((item) => (
+                        <button
+                          key={item.id}
+                          onClick={() => scrollToSection(item.id)}
+                          className={`text-left px-4 py-3 rounded-lg text-lg smooth-transition ${
+                              activeSection === item.id
+                              ? "text-primary font-semibold " 
+                              : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                          }`}
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </nav>
+
+                    <div className="flex flex-col gap-3 mt-4">
+                      <Button
+                        variant="default"
+                        onClick={() => scrollToSection("contact")}
+                        className="gap-2"
                       >
-                        {item.label}
-                      </button>
-                    ))}
-                  </nav>
-
-                  <div className="flex flex-col gap-3 mt-4">
-                    <Button
-                      variant="default"
-                      onClick={() => scrollToSection("contact")}
-                      className="gap-2"
-                    >
-                      Contact Me
-                      <span className="text-lg">↗</span>
-                    </Button>
+                        Contact Me
+                        <span className="text-lg">↗</span>
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          )}
         </div>
       </div>
     </header>

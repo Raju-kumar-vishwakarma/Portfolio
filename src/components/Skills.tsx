@@ -1,5 +1,7 @@
 import { Smartphone, Code2, Palette, Database, Globe, GitBranch } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { motion } from "framer-motion";
+import { Rotate3DCard, Float3D } from "@/components/3DAnimations";
 
 const skillsData = [
   {
@@ -117,28 +119,35 @@ const Skills = () => {
             const Icon = category.icon;
             const colors = getColorClasses(category.color);
             return (
-              <div
-                key={index}
-                className="glass-card rounded-xl p-6 hover:scale-105 smooth-transition group animate-scale-in cyber-border"
-              >
-                <div className={`w-12 h-12 ${colors.bg} rounded-lg flex items-center justify-center mb-4 ${colors.hoverBg} smooth-transition ${colors.glow}`}>
-                  <Icon className={`w-6 h-6 ${colors.text} group-hover:scale-110 smooth-transition`} />
-                </div>
-                
-                <h3 className="text-xl font-bold mb-4">{category.title}</h3>
-                
-                <div className="space-y-3">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-1">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-foreground">{skill.name}</span>
-                        <span className="text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <Progress value={skill.level} className="h-2" />
+              <Float3D key={index} delay={index * 0.1}>
+                <Rotate3DCard duration={6 + index}>
+                  <div
+                    className="glass-card rounded-xl p-6 hover:scale-105 smooth-transition group animate-scale-in cyber-border h-full"
+                  >
+                    <div className={`w-12 h-12 ${colors.bg} rounded-lg flex items-center justify-center mb-4 ${colors.hoverBg} smooth-transition ${colors.glow}`}>
+                      <Icon className={`w-6 h-6 ${colors.text} group-hover:scale-110 smooth-transition`} />
                     </div>
-                  ))}
-                </div>
-              </div>
+                    
+                    <h3 className="text-xl font-bold mb-4">{category.title}</h3>
+                    
+                    <div className="space-y-3">
+                      {category.skills.map((skill, skillIndex) => (
+                        <motion.div key={skillIndex} className="space-y-1"
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: skillIndex * 0.1 }}
+                        >
+                          <div className="flex justify-between text-sm">
+                            <span className="text-foreground">{skill.name}</span>
+                            <span className="text-muted-foreground">{skill.level}%</span>
+                          </div>
+                          <Progress value={skill.level} className="h-2" />
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </Rotate3DCard>
+              </Float3D>
             );
           })}
         </div>
