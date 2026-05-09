@@ -9,6 +9,8 @@ import anishow from "../assets/anishow.png";
 import avarena from "../assets/avarena.png";
 import library from "../assets/xyzlibrary.png";
 import EduPlatform from "../assets/EduPlatform.png";
+import StoryCreators from "../assets/TheStoryCreators.png";
+
 
 
 const ProjectFilters = () => {
@@ -21,7 +23,7 @@ const ProjectFilters = () => {
       title: "The Story Creators",
       description:
         "A cinematic wedding storytelling landing page concept with a clean hero, soft overlays, and quick contact shortcuts inspired by the provided reference.",
-      image: EduPlatform,
+      image: StoryCreators,
       tags: ["Web", "UI/UX"],
       tech: ["React", "Tailwind", "Framer Motion"],
       github: "https://github.com/Raju-kumar-vishwakarma/The-Story-Creators",
