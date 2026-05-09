@@ -10,12 +10,23 @@ import avarena from "../assets/avarena.png";
 import library from "../assets/xyzlibrary.png";
 import EduPlatform from "../assets/EduPlatform.png";
 
+
 const ProjectFilters = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filters = ["All", "Web", "Mobile", "UI/UX", "Backend"];
 
   const projects = [
+    {
+      title: "The Story Creators",
+      description:
+        "A cinematic wedding storytelling landing page concept with a clean hero, soft overlays, and quick contact shortcuts inspired by the provided reference.",
+      image: EduPlatform,
+      tags: ["Web", "UI/UX"],
+      tech: ["React", "Tailwind", "Framer Motion"],
+      github: "https://github.com/Raju-kumar-vishwakarma/The-Story-Creators",
+      demo: "https://www.thestorycreators.photography/",
+    },
     {
       title: "Anishow Mobile App & Website",
       description:
